@@ -1,0 +1,53 @@
+.address{
+  height: 100px;
+  width:100%;
+  background-color:  darkcyan;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+}
+.address image{
+  width: 26px;
+  height: 26px;
+}
+.info{
+  flex: 2;
+}
+.phone{
+  flex: 1;
+}
+.cartList{
+  height: 200px;
+  color: dimgray;
+}
+.item{
+  display: flex;
+  height: 80px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.thumb image{
+  width: 80px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+}
+.tb{
+  display: flex;
+  align-items: center;
+}
+.tptitle{
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.addButton{
+  margin-top: 20px;
+  width: 88%;
+}
+.price{
+  color:#f00;
+  text-align: right;
+  padding:10px 10px 0 0;
+}

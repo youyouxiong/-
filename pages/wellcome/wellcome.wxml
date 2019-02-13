@@ -1,0 +1,11 @@
+<view class="outer">
+  <view class='middle'>
+     <navigator url='/page/index/index' open-type="switchTab">
+     <image mode='widthFix' class='logo' src='/img/logo.png'></image>
+     </navigator>
+    <view class='time'> <text>{{ time }}</text> </view>
+    <navigator url='/page/index/index' open-type="switchTab">
+    <image mode='widthFix' class='logo_text' src='/img/logo_text.png'></image>
+    </navigator>
+  </view>
+</view>

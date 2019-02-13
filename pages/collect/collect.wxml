@@ -1,0 +1,10 @@
+<view class='cartList'>
+  <view class='item' wx:for = "{{goodsCollect}}" wx:key = "{{item.id}}">
+    <view class='thumb'><image mode='widthFix' src="{{item.thumb}}"></image></view>
+    <view class='goodsPrice'>￥:{{item.shop_price}} 元</view>
+    <view class='tptitle'>
+      <text class='title'>{{item.goods_name}}</text>
+      <icon type='clear' bindtap='delCollectGoods'  data-index = "{{index}}" size='20'></icon>
+    </view>
+  </view>
+</view>

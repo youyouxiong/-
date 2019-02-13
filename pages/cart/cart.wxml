@@ -1,0 +1,39 @@
+<view class='outer'>
+  <view class='emptycart' wx:if="{{dataEmpty}}">
+    <image src='/img/empty_cart.png'></image>
+    <text>您还没有添加商品</text>
+    <text class='buybtn' bindtap='jumpIndex'>去逛逛</text>
+  </view>
+  <scroll-view wx:else scroll-y style="height:{{ scrollHeight }}px;">
+    <view class='cartList'>
+
+      <view class='item' wx:for = "{{cartData}}" wx:key = "{{item.id}}">
+        <view class='tb' bindtap='selectBox' data-index = "{{index}}" wx:if = "{{ item.selected == 1 }}"><icon type='success' size='20'></icon></view>
+        <view class='tb' bindtap='selectBox' data-index = "{{index}}" wx:else><icon type='circle' size='20'></icon></view>
+        <view class='thumb'><image mode='widthFix' src="{{item.thumb}}"></image></view>
+        <view class='goodsPrice'>￥:{{item.shop_price}} 元</view>
+        <view class='tptitle'>
+          <text class='title'>{{item.goods_name}}</text>
+          <icon type='clear' bindtap='delCartGoods'  data-index = "{{index}}" size='20'></icon>
+        </view>
+        <view class='goodsnum'>
+          <text class='minus {{ minusStatus }}' bindtap='bindMinus' data-index = "{{index}}">-</text>
+          <input type='text' bindinput='bindmanual' data-index = "{{index}}" value='{{item.goods_num}}'></input>
+          <text class='plus' bindtap='bindPlus' data-index = "{{index}}">+</text>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+  <view class='buyinfo'  wx:if="{{!dataEmpty}}">
+    <view class='buyinfo-left'>
+      <view bindtap='checkAll' class='checkall'>
+       <icon wx:if = "{{checkAll}}" type='success' size='20'></icon>
+       <icon wx:else type='circle' size='20'></icon>
+      </view>
+      <text>全选</text>
+      <text class='totalPrice'>￥: {{ goodsTotalPrice }} 元</text>
+    </view>
+    <view bindtap='buyNow' class='buyinfo-right'>立即结算</view>
+  </view>
+</view>

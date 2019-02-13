@@ -1,0 +1,65 @@
+page{
+  height: 100%;
+  width: 100%;
+}
+.outer{
+  height: 500;
+  width: 100%;
+}
+.cartList{
+  height: 200px;
+}
+.item{
+  display: flex;
+  height: 80px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.thumb image{
+  width: 80px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+}
+.tb{
+  display: flex;
+  align-items: center;
+}
+.tptitle{
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.buyinfo{
+  display: flex;
+  flex: 5;
+  height: 51px;
+  border-top: 1px solid #ccc;
+}
+.buyinfo-left{
+  display: flex;
+  flex: 3;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+.buyinfo-right{
+  display: flex;
+  flex: 2;
+  background-color: #ff9801;
+  color: #fff;
+  align-items: center;
+  justify-content: space-around;
+}
+.goodsPrice{
+  position: absolute;
+  right: 370rpx;
+  bottom: 10px;
+  color: #ff9801;
+  font-size: 14px;
+}
+.totalPrice{
+  padding: 0 10px;
+  color: #ff9801;
+  font-weight: bold;
+}

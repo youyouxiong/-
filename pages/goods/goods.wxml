@@ -1,0 +1,47 @@
+<view class="outer">
+  <scroll-view scroll-y style="height:{{ scrollHeight }}px;">
+    <swiper class='swiper' indicator-dots="{{indicatorDots}}" indicator-active-color="#ff9801" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <swiper-item wx:for="{{ imgUrls }}">
+        <image class='goodsimg' mode='widthFix' src="{{item.img_src}}"/>
+      </swiper-item>
+    </swiper>
+    <view class='goodsinfo'>
+      <view class='goodstitle'>{{ goodsInfo.goods_name }}</view>
+      <view class='goodsale'>
+        <view class='goodsale-left'>
+          <text class='cprice'>￥{{ goodsInfo.shop_price }}</text>
+          <text class='oprice'>￥{{ goodsInfo.market_price }}</text>
+          <text class='snum'>销量 {{ goodsInfo.sale_num }} 件</text>
+        </view>
+        <view class='goodsale-right'>
+          <view class='goodsnum'>
+            <text class='minus {{ minusStatus }}' bindtap='bindMinus'>-</text>
+            <input type='text' bindchange='bindmanual' value='{{ num }}'></input>
+            <text class='plus' bindtap='bindPlus'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='swipertab'>
+      <view class="tabitem {{currentab==0 ? 'active' : ''}}" data-current="0" bindtap='clicktab'>详情</view>
+      <view class="tabitem {{currentab==1 ? 'active' : ''}}" data-current="1" bindtap='clicktab'>售后</view>
+    </view>
+    <swiper style="height:{{ goodsInfo.des_img_height }}px;" class='detailswiper' current='{{ currentab }}' duration='250'>
+      <swiper-item><image class='detail' mode='widthFix' src="{{ goodsInfo.des_img }}"></image></swiper-item>
+      <swiper-item> <view>tab2</view> </swiper-item>
+    </swiper>
+  </scroll-view>
+  <view class='buy' style='height:{{ buyHeight }}px;'>
+    <view class='collect'>
+      <image src='http://www.tongpankt.com/images/goods/index.png'></image>
+      <view>首页</view>
+    </view>
+    <view class='collect' bindtap='addcollect' data-id="{{ goodsInfo.id }}">
+      <image wx:if="{{collectStatus == -1}}" src='http://www.tongpankt.com/images/goods/collect.png'></image>
+      <image wx:else src='http://www.tongpankt.com/images/goods/do_collect.png'></image>
+      <view>收藏</view>
+    </view>
+    <view class='cart cbg' bindtap='addToCart'>加入购物车</view>
+    <view class='cart nbg' bindtap='buyNow'>立即购买</view>
+  </view>
+</view>

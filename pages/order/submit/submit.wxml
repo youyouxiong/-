@@ -1,0 +1,25 @@
+<view class='outer'>
+  <view class='address'>
+    <image src='/img/address.png'></image>
+    <view class='info'>
+        <view>收货人：{{address.shr_name}}</view>
+        <view>收货地址：{{address.address}}</view>
+    </view>
+    <view class='phone'>
+      {{address.phone}}
+    </view>
+    <image src='/img/rjt.png'></image>
+  </view>
+  <view class='cartList'>
+    <view class='item'  wx:for="{{cartList}}" wx:key="{{item.id}}">
+      <view class='thumb'><image mode='widthFix' src="{{item.thumb}}"></image></view>
+      <view class='tptitle'>
+        <text class='title'>{{item.goods_name}}</text>
+        ×{{item.goods_num}}
+      </view>
+    </view>
+      <view class='price'>总价：{{goodsTotalPrice}} 元</view>
+       <button bindtap='submit' type="primary" class='addButton'> 提交订单 </button>
+  </view>
+
+</view>

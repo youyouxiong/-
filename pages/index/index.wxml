@@ -1,0 +1,37 @@
+<view class='outcontainer'>
+  <!-- 轮播图 -->
+  <swiper class='wx-swiper' indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" indicator-color="#ffffff"  indicator-active-color="#ff9801" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <navigator url="{{item.link_url}}">
+        <image src="{{item.img_src}}" class="slide-image" width="355" height="150"/></navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 专题区 -->
+  <view class='special'>
+    <view class='sleft'> <image mode='widthFix' src='http://www.tongpankt.com/images/etz.png'></image> </view>
+    <view class='sright'>
+      <image class='nrz' mode='widthFix' src='http://www.tongpankt.com/images/nrz.png'></image>
+      <image mode='widthFix' src='http://www.tongpankt.com/images/nanrz.png'></image>
+    </view>
+  </view>
+  <!-- 最新商品区 -->
+  <view class='newgoodstitle'>最新商品</view>
+  <view class='goodslist'>
+
+    <view class='goodsitem' wx:for="{{ goodslist }}">
+      <view class='goodsimg'> <image mode='widthFix' src='{{ item.thumb }}'></image> </view>
+      <view class='goodsinfo'>
+        <text class='goodstitle'>{{ item.title }}</text>
+        <view class='goodsprice'>
+          <text>￥{{ item.price }}</text>
+          <image wx:if="{{ item.collect == 0 }}" mode='widthFix' src='http://www.tongpankt.com/images/heart.png'></image>
+          <image wx:if="{{ item.collect == 1 }}" mode='widthFix' src='http://www.tongpankt.com/images/heartcolored.png'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

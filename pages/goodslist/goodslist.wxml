@@ -1,0 +1,27 @@
+<view class="outer">
+<scroll-view class="nav" scroll-x >
+  <block wx:for="{{ cates }}">
+  <navigator wx:if="{{ item.id == cid }}" class='current' url="goodslist?cid={{ item.id }}">{{item.cate_name}}</navigator>
+  <navigator wx:else url="goodslist?cid={{ item.id }}">{{item.cate_name}}</navigator>
+  </block>
+</scroll-view>
+<view class='listheight'>
+  <view wx:if="{{ !empty }}" class='newgoodstitle'>{{ description }}</view>
+    <view wx:if="{{ !empty }}" class='goodslist'>
+      <view bindtap='showGoods' data-id="{{ item.id }}" class='goodsitem' wx:for="{{ goodslist }}">
+        <view class='goodsimg'> <image mode='widthFix' src='{{ item.thumb }}'></image> </view>
+        <view class='goodsinfo'>
+          <text class='goodstitle'>{{ item.goods_name }}</text>
+          <view class='goodsprice'>
+            <text>￥{{ item.shop_price }}</text>
+            <image mode='widthFix' src='http://www.tongpankt.com/images/heart.png'></image>
+            <!-- <image wx:if="{{ item.collect == 1 }}" mode='widthFix' src='http://www.tongpankt.com/images/heartcolored.png'></image> -->
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='newgoodstitle' wx:else>
+      暂无数据~
+    </view>
+</view>
+</view>

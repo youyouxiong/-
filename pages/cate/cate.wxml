@@ -1,0 +1,18 @@
+<view class='outer'>
+  <view class='left'>
+    <block wx:for="{{ topCate }}">
+      <view bindtap="changeid" data-id="{{item.id}}" wx:if="{{ item.id === startCateId }}" class='navitem current'>{{item.cate_name}}</view>
+      <view bindtap="changeid" data-id="{{item.id}}" wx:else class='navitem'>{{item.cate_name}}</view>
+    </block>
+  </view>
+  <view class='right'>
+    <view class='banner'> <image mode='widthFix' src='{{cates.thumb}}'></image> </view>
+    <view class='title'>—— {{cates.cate_name}} ——</view>
+    <view class='catelist'>
+      <view wx:for="{{sonCates}}" class='cateitem'>
+        <view class='cateimg'> <image bindtap='goodslist' data-cid="{{item.id}}" mode='widthFix' src='{{item.thumb}}'></image> </view>
+        <view class='catename'>{{item.cate_name}}</view>
+      </view>
+    </view>
+  </view>
+</view>

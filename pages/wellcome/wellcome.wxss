@@ -1,0 +1,32 @@
+page{
+  height: 100%;
+  width: 100%;
+  background-color: #ff9801;
+}
+.outer{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: url(http://401121123.editorservice.open.weixin.qq.com/files/img/topb.png) top left no-repeat,url(http://401121123.editorservice.open.weixin.qq.com/files/img/bob.png) bottom right no-repeat;
+}
+.middle{
+  width: 60%;
+  height: 60%;
+  /* background-color: #ccc; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo{
+  width: 117px;
+  margin-bottom: 20px;
+}
+.logo_text{
+  width:217px;
+  margin-top: 20px;
+}
+.time{
+  color: #ffffff;
+}
